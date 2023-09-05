@@ -1,0 +1,8 @@
+string $objname[]  =`ls -sl`;
+string $savePath = "D:/FbxModels";
+for ($SObjname in $objname ){
+    select $SObjname;
+	file -force -options "v=0;" -typ "FBX export" -pr -es ($savePath +"/" + $SObjname+".fbx");
+}
+
+select $objname;
